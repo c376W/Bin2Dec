@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bin2Dec';
+  binValue='';
+  dec="";
+
+  convertDec(){
+    this.dec=parseInt(this.binValue,2).toString();
+    console.log(this.dec);
+  }
 }
