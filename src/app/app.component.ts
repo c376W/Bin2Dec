@@ -9,9 +9,19 @@ export class AppComponent {
   title = 'Bin2Dec';
   binValue='';
   dec="";
+  warning="Hello! Welcome~ ^_^";
+  regex=/[2-9]|\D/g;
 
   convertDec(){
-    this.dec=parseInt(this.binValue,2).toString();
-    console.log(this.dec);
+    if(this.binValue.search(this.regex)>=0) {
+      this.warning="The input value is invalid. Please enter a binary number."
+      return;
+    }else{
+      this.warning="Yay~~~";
+      this.dec=parseInt(this.binValue,2).toString();
+      console.log(this.dec);
+
+    }
+    
   }
 }
